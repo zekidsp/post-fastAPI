@@ -20,7 +20,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade() -> None:
     """Upgrade schema."""
-    op.create_foreign_key('fk_posts_users', 'posts', 'users', ['id'], ['id'], ondelete='CASCADE')
+    #op.create_foreign_key('fk_posts_users', 'posts', 'users', ['id'], ['id'], ondelete='CASCADE')
     pass
 
 

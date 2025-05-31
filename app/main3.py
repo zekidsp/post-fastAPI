@@ -59,7 +59,7 @@ def test_posts(db: Session = Depends(get_db)):
 
 
 
-# tutorial video where I left: 11:23 as of 2025.05.22: vote
+# tutorial video where I left: 11:56 as of 2025.05.27: 
 # pip install --upgrade bcrypt==4.1.1  , newer versiosn are not compatiple
     
 
