@@ -20,7 +20,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade() -> None:
     """Upgrade schema."""
-    #op.add_column('posts', sa.Column('owner_id', sa.Integer, sa.ForeignKey("users.id", ondelete="CASCADE"), nullable=False))
+    op.add_column('posts', sa.Column('owner_id', sa.Integer, sa.ForeignKey("users.id", ondelete="CASCADE"), nullable=False))
     op.create_foreign_key('fk_posts_users', 'posts', 'users', ['owner_id'], ['id'], ondelete='CASCADE')
     pass
 
@@ -28,5 +28,5 @@ def upgrade() -> None:
 def downgrade() -> None:
     """Downgrade schema."""
     op.drop_constraint('fk_posts_users', 'posts', type_='foreignkey')
-    #op.drop_column('posts', 'owner_id')
+    op.drop_column('posts', 'owner_id')
     pass
