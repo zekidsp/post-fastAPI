@@ -28,7 +28,7 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('user_id', 'post_id')
     )
-    op.add_column('posts', sa.Column('owner_id', sa.Integer(), nullable=False))
+    #op.add_column('posts', sa.Column('owner_id', sa.Integer(), nullable=False))
     op.alter_column('posts', 'published',
                existing_type=sa.BOOLEAN(),
                nullable=False,
@@ -49,6 +49,6 @@ def downgrade() -> None:
                existing_type=sa.BOOLEAN(),
                nullable=True,
                existing_server_default=sa.text('true'))
-    op.drop_column('posts', 'owner_id')
+    #op.drop_column('posts', 'owner_id')
     op.drop_table('votes')
     # ### end Alembic commands ###
