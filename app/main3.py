@@ -50,7 +50,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World!!! welocme"}
+    return {"message": "Hello World!!! This is a fun project for practising FastAPI"}
 
 @app.get("/sqlalchemy")
 def test_posts(db: Session = Depends(get_db)):
@@ -59,7 +59,7 @@ def test_posts(db: Session = Depends(get_db)):
 
 
 
-# tutorial video where I left: 11:56 as of 2025.05.27: 
+# tutorial video where I left: 12:44 as of 2025.06.14: 
 # pip install --upgrade bcrypt==4.1.1  , newer versiosn are not compatiple
     
 
